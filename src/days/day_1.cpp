@@ -49,38 +49,39 @@ public:
         int zero_counter = 0;
         int turn = 50;
         for (auto &line: lines) {
-            char direction = line[0];
             int new_turn;
             std::from_chars(line.data() + 1, line.data() + line.size(), new_turn);
-            int prev = turn;
-            if (direction == 'R') {
-                turn += new_turn;
-            } else if (direction == 'L') {
-                turn -= new_turn;
-            } else {
-                throw std::runtime_error(std::format("invalid line: '{}'", line));
+            char direction = line[0];
+            for (int i = 0; i < new_turn; i++) {
+                if (direction == 'R') {
+                    turn += 1;
+                } else if (direction == 'L') {
+                    turn -= 1;
+                } else {
+                    throw std::runtime_error(std::format("invalid line: '{}'", line));
+                }
+                if (turn == -1) {
+                    turn = 99;
+                }
+                if (turn == 100) {
+                  turn = 0;
+                }
+                if (turn == 0) {
+                    zero_counter++;
+                }
+
             }
-            int before_calc = turn;
-            while (turn < 0) {
-                turn += 100;
-                zero_counter++;
-                println("    added ");
-            }
-            while (turn > 100) {
-                turn -= 100;
-                zero_counter++;
-                println("    added ");
-            }
-            println("{}, went from {} to  {}", turn , prev, before_calc);
+            println("The dial is rotated {} to point at {}", line, turn);
+
         }
 
         return std::to_string(zero_counter);
     }
 
-    ~Day_1() override = default;
+    ~Day_2() override = default;
 };
 
-//3175 for lavt
-//5986 er for lavt
-//1348005
-//12785886
+
+//6498
+
+//0.014984583
