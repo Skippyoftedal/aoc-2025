@@ -1,0 +1,11 @@
+resources/*
+!resources/.gitkeep
+
+!resources/input/
+resources/input/*
+!resources/input/.gitkeep
+
+!resources/test/
+resources/test/*
+!resources/test/.gitkeep
+.idea
