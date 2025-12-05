@@ -85,4 +85,3 @@ public:
         return std::to_string(sum);
     }
 };
-//p2: 50793864718, took 3.799125084 seconds

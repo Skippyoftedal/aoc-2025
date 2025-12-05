@@ -54,5 +54,3 @@ public:
         return std::format("{}", total);
     }
 };
-
-//00467925
