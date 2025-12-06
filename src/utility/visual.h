@@ -85,6 +85,14 @@ public:
     static constexpr auto CYAN   = "\033[36m";
     static constexpr auto MAGENTA = "\033[35m";
     static constexpr auto WHITE   = "\033[37m";
+    static constexpr auto BG_BLACK   = "\033[40m";
+    static constexpr auto BG_RED     = "\033[41m";
+    static constexpr auto BG_GREEN   = "\033[42m";
+    static constexpr auto BG_YELLOW  = "\033[43m";
+    static constexpr auto BG_BLUE    = "\033[44m";
+    static constexpr auto BG_MAGENTA = "\033[45m";
+    static constexpr auto BG_CYAN    = "\033[46m";
+    static constexpr auto BG_WHITE   = "\033[47m";
 };
 
 #endif //AOC_2022_VISUAL_H
