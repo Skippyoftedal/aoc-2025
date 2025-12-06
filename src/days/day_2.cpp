@@ -7,20 +7,10 @@
 #include <vector>
 #include <iomanip>
 #include "../utility/visual.h"
+#include "../utility/util.h"
 
 using std::endl, std::pair, std::cout, std::string, std::vector, std::stack, std::format, std::println;
-std::vector<std::string> split_by_regex(const std::string &text, const std::regex &re) {
-    std::vector<std::string> result;
-    std::sregex_token_iterator it(text.begin(), text.end(), re, -1);
-    std::sregex_token_iterator end;
-    while (it != end) {
-        if (!it->str().empty()) {
-            result.push_back(*it);
-        }
-        ++it;
-    }
-    return result;
-}
+
 
 bool is_valid2(const size_t int_value) {
     auto s_val = std::to_string(int_value);
